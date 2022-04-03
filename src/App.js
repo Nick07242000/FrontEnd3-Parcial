@@ -1,25 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import data from './data.json'
+import Aventura from './components/Aventura'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  render() {
+    return (
+      <div className='App'>
+        {//paso el json como prop para tener un componente aventura mas generico, que le puedo pasar distintas historias para hacerlo reutilizable
+  }
+        <Aventura historia={data}/>
+      </div>
+    )
+  }
 }
 
-export default App;
+export default App
